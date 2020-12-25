@@ -1,5 +1,6 @@
 import React from 'react'
 import './Home.scss';
+import Product from './Product';
 
 function Home() {
     return (
@@ -9,15 +10,48 @@ function Home() {
             </div>
 
             <div className="home__row">
-                
+                <Product 
+                    id='12850'
+                    title='The Lean Startup'
+                    price={1.99}
+                    image='https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg'
+                    rating={1}/>
+                <Product 
+                    id='12852'
+                    title='The Lean Startup'
+                    price={2.99}
+                    image='https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg'
+                    rating={3}/>
             </div>
 
             <div className="home__row">
-
+                <Product 
+                    id='12853'
+                    title='The Lean Startup'
+                    price={11.99}
+                    image='https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg'
+                    rating={3}/>
+                <Product 
+                    id='12854'
+                    title='The Lean Startup'
+                    price={12.99}
+                    image='https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg'
+                    rating={1}/>
+                <Product 
+                    id='12855'
+                    title='The Lean Startup'
+                    price={13.99}
+                    image='https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg'
+                    rating={5}/>
             </div>
-            
-            <div className="home__row">
 
+            <div className="home__row">
+                <Product 
+                    id='12856'
+                    title='The Lean Startup'
+                    price={39.99}
+                    image='https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg'
+                    rating={4}/>
             </div>
         </div>
     )
