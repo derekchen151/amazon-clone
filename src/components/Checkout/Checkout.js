@@ -1,9 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Checkout.scss';
 import Subtotal from '../Subtotal/index';
+import { useStateValue } from '../../StateProvider';
 
-const Checkout = props => (
+
+function Checkout() {
+	
+	const [{basket}, dispatch] = useStateValue();
+	
+	return (
 	<div className="checkout">
 		<div className="checkout__left">
 			<img 
@@ -21,12 +26,7 @@ const Checkout = props => (
 			<Subtotal />
 		</div>
 	</div>
-);
-
-const CheckoutPropTypes = {
-	// always use prop types!
+	)
 };
-
-Checkout.propTypes = CheckoutPropTypes;
 
 export default Checkout;
