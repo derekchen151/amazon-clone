@@ -3,7 +3,7 @@ import './Checkout.scss';
 import Subtotal from '../Subtotal/index';
 import { useStateValue } from '../../StateProvider';
 import CheckoutProduct from '../CheckoutProduct/CheckoutProduct';
-
+import FlipMove from 'react-flip-move';
 
 function Checkout() {
 	
