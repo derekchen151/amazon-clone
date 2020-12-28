@@ -2,12 +2,22 @@ import React from 'react'
 import './Header.scss'
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useStateValue } from '../../StateProvider';
+import { auth } from 'src/firebase';
 
 function Header() {
 
-    const [{ basket }, dispatch] = useStateValue();
+    const [{ basket, user }, dispatch] = useStateValue();
+    const history = useHistory();
+
+    const handleAuthentication = () => {
+        if (user) {
+            auth.signOut();
+        } else {
+            history.push('/login');
+        }
+    }
 
     return (
         <div className="header">
@@ -21,13 +31,14 @@ function Header() {
                 <SearchIcon className="header__search__icon"></SearchIcon>
             </div>
             <div className="header__nav">
-                <div className="header__nav__option">
+                <div onClick={handleAuthentication} className="header__nav__option">
                     <span className="header__nav__option__one">
-                        Hello Guest
+                        Hello {user ? user.email : 'Guest'}
                     </span>
-                    <span className="header__nav__option__two">
-                        Sign In
+                    <span className="header__nav__option__two" >
+                        {user ? 'Sign Out': 'Sign In'}
                     </span>
+                    
                 </div>
                 <div className="header__nav__option">
                     <span className="header__nav__option__one">

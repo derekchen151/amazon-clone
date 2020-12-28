@@ -1,6 +1,7 @@
 export const initialState = {
     basket: [],
-    subtotal: 0
+    subtotal: 0,
+    user: null
 };
 
 // Selector
@@ -28,6 +29,11 @@ const reducer = (state, action) => {
                 ...state,
                 basket: newBasket,
                 Subtotal: newSubtotal
+            }
+        case 'SET_USER':
+            return {
+                ...state,
+                user: action.user
             }
         default: 
             return;
